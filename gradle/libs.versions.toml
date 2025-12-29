@@ -1,0 +1,37 @@
+[versions]
+agp = "8.3.0"  # 保持 AGP 插件版本
+kotlin = "2.0.21" # 你的 Kotlin 版本
+coreKtx = "1.12.0"
+appcompat = "1.6.1"
+material = "1.11.0"
+constraintlayout = "2.1.4"
+room = "2.6.1" # (已添加) Room 的版本号
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+activity = "1.8.0" # 根据你的依赖情况，可能需要这个
+
+[libraries]
+# 核心依赖
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" } # 这是一个常用的库，先加上
+
+# (已添加) Room 数据库的完整库定义
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# 测试依赖
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+[plugins]
+# 插件定义
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" } # (已添加) Kapt 插件的定义
+androidx-room = { id = "androidx.room", version.ref = "room" } # (已添加) Room 插件的定义
